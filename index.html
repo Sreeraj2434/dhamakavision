@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sree Cinemas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!--<style>
+    .dolby-box img {
+      animation: slideImages 20s infinite;
+    }
+
+    @keyframes slideImages {
+      0%, 20%   { content: url('./assets/images/dolby-atmos-1920-x-1080-wallpaper-gf18auutod1nyd0w.webp'); }
+      21%, 40% { content: url('./assets/images/avatar\ fire.jpg'); }
+      41%, 60% { content: url('./assets/images/Cooolie\ coming\ soon.jpg'); }
+      61%, 100% { content: url('./assets/images/dolby-atmos-1920-x-1080-wallpaper-gf18auutod1nyd0w.webp'); }
+    }
+  </style>-->
+</head>
+<body>
+
+<!-- Header -->
+<header class="custom-header">
+  <div class="nav-box">
+    <img src="./assets/images/Dhamaka sample.PNG" alt="Sree Cinemas Logo" class="logo">
+    <h1 class="site-title"></h1>
+    <button id="menu-toggle" class="hamburger"><i class="fas fa-bars"></i></button>
+  </div>
+
+  <nav class="nav-menu">
+  <a href="#" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+  <i class="fas fa-home"></i> Home
+</a>
+
+  <a href="AboutUs.html"><i class="fas fa-info-circle"></i> About Us</a>
+  <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+  <a href="#movies"><i class="fas fa-film"></i> Movies</a>
+
+ <div class="search-wrapper">
+  <div class="search-icon-box" id="search-btn">
+    <i class="fas fa-search"></i>
+  </div>
+  <input type="text" class="search-box" placeholder="Search..." />
+  <ul class="search-suggestions" id="searchSuggestions"></ul>
+</div>
+</nav>
+</header>
+
+<!-- tagline -->
+<section class="tagline-section">
+  <h2>Coming Soon...</h2>
+</section> 
+<!-- tagline -->
+
+<!-- Dolby Banner -->
+<section class="slider">
+  <div class="slide-track">
+    <img src="./assets/images/dolby-atmos-1920-x-1080-wallpaper-gf18auutod1nyd0w.webp" alt="Slide 1">
+    <img src="./assets/images/Cooolie coming soon.jpg" alt="Slide 2">
+    <img src="./assets/images/avatar fire.jpg" alt="Slide 3">
+    <img src="./assets/images/war 2.jpg" alt="Slide 4">
+    <img src="./assets/images/COOLIE SAMPLE IMG.webp" alt="Slide 5 (repeat)">
+    <img src="./assets/images/war 2.jpg" alt="Slide 5 (repeat)">
+    <img src="./assets/images/AVATAR SAMPLE.webp" alt="Slide 6 (repeat)">
+  </div>
+</section>
+
+<!-- Booking Section -->
+<section class="booking">
+  <select><option>SELECT MOVIES</option>
+    <option>Ravanaprabhu</option>
+    <option>Shaitaan</option>
+    <option>Article 360</option>
+    <option>Dune 2</option>
+  </select>
+  <select id="date-select">
+  <option>SELECT DATE</option>
+</select>
+  <select><option>SELECT TICKET</option>
+    <option>1 ticket </option>
+    <option>1+</option></select>
+  <select><option>SHOWTIME</option>
+    <option>11:00 AM</option>
+    <option>2:00 PM</option>
+    <option>7:00 PM</option>
+    <option>12:00 AM</option></select>
+  <button class="quick-book" onclick="quickBook('Shaitaan', '4.00 AM', './assets/images/shaitaan.jpeg')">Quick Book</button>
+
+</section>
+
+<!-- Movies Section -->
+<section class="movies" id="movies">
+  <!-- existing movie cards -->
+  <div class="movie-grid">
+    <!-- All movie-card HTML you shared above -->
+           <!-- Movie 1 -->
+      <div class="movie-card">
+        <div class="poster">
+          <img src="./assets/images/ravana prabhu.jpeg" alt="Ravanaprabhu">
+          <span class="language">Malayalam</span>
+        </div>
+        <div class="movie-info">
+          <h3>Ravanaprabhu</h3>
+          <p class="rating">★ ★ ★ ★ ☆</p>
+          <p class="desc">CBFC: U | 2001 · Action/Thriller · 2h 55m</p>
+          <p class="meta">IMDb: 7.1/10 · 88% Liked</p>
+          <button class="book-btn">Book Now</button>
+        </div>
+      </div>
+
+      <!-- Movie 2 -->
+      <div class="movie-card">
+        <div class="poster">
+          <img src="./assets/images/Dune.jpeg" alt="Dune">
+          <span class="language">Hindi</span>
+        </div>
+        <div class="movie-info">
+          <h3>Dune: Part Two (HINDI)</h3>
+          <p class="rating">★ ★ ★ ★ ★</p>
+          <p class="desc">CBFC: U/A | 2024 · Sci-fi/Adventure · 2h 46m</p>
+          <p class="meta">IMDb: 8.9/10 · 95% Liked</p>
+          <button class="book-btn">Book Now</button>
+        </div>
+      </div>
+
+      <!-- Movie 3 -->
+      <div class="movie-card">
+        <div class="poster">
+          <img src="./assets/images/370 article.jpeg" alt="Article 370">
+          <span class="language">Hindi</span>
+        </div>
+        <div class="movie-info">
+          <h3>Article 370</h3>
+          <p class="rating">★ ★ ★ ★ ☆</p>
+          <p class="desc">CBFC: U/A | 2024 · Action/Thriller · 2h 38m</p>
+          <p class="meta">IMDb: 8.5/10 · 94% Liked</p>
+          <button class="book-btn">Book Now</button>
+        </div>
+      </div>
+
+      <!-- Movie 4 -->
+      <div class="movie-card">
+        <div class="poster">
+          <img src="./assets/images/shaitaan.webp" alt="Shaitaan">
+          <span class="language">Hindi</span>
+        </div>
+        <div class="movie-info">
+          <h3>Shaitaan</h3>
+          <p class="rating">★ ★ ★ ★ ☆</p>
+          <p class="desc">CBFC: U/A | 2024 · Horror/Mystery · 2h 20m</p>
+          <p class="meta">IMDb: 7.7/10 · 93% Liked</p>
+          <button class="book-btn">Book Now</button>
+        </div>
+      </div>
+
+
+  </div>
+</section>
+
+<!-- tagline -->
+<section class="tagline-section">
+  <h2>Dhamaka Vision – Where Every Story Explodes!</h2>
+</section> 
+<!-- tagline -->
+
+
+<!-- Footer -->
+<footer class="footer" id="contact">
+  <div class="footer-container">
+    <div class="footer-logo">
+      <img src="./assets/images/Dhamaka sample.PNG" alt="Sree Cinemas" />
+      <h2>Your Vision of Entertainment, Our Dhamaka on Screen</h2>
+    </div>
+
+    <div class="footer-links">
+      <a href="#" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+  <i class="fas fa-home"></i> Home
+</a>
+
+      <a href="#movies"><i class="fas fa-film"></i> Movies</a>
+      <a href="#contact"><i class="fas fa-phone"></i> Contact</a>
+      <a href="about.html" target="_blank"><i class="fas fa-info-circle"></i> About</a>
+    </div>
+
+    <div class="footer-contact">
+      <p><i class="fas fa-envelope"></i> contact@sreecinemas.com</p>
+      <p><i class="fas fa-phone-alt"></i> +91 98765 43210</p>
+    </div>
+
+    <div class="footer-social">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-google-play"></i></a>
+      <a href="#"><i class="fab fa-apple"></i></a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Sree Cinemas. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Toggle search box
+  document.getElementById("search-btn").addEventListener("click", function () {
+    document.querySelector(".search-box").classList.toggle("active");
+  });
+
+  // Movie suggestions
+  const movieList = ["Ravanaprabhu", "Dune", "Shaitaan", "Article 370"];
+  const input = document.querySelector(".search-box");
+  const suggestionBox = document.getElementById("searchSuggestions");
+
+
+  input.addEventListener("input", function () {
+    const query = input.value.toLowerCase();
+    suggestionBox.innerHTML = "";
+    if (query.length === 0) {
+      suggestionBox.style.display = "none";
+      return;
+    }
+
+    const filtered = movieList.filter((movie) =>
+      movie.toLowerCase().includes(query)
+    );
+
+    if (filtered.length === 0) {
+      suggestionBox.style.display = "none";
+      return;
+    }
+
+    filtered.forEach((movie) => {
+      const li = document.createElement("li");
+      li.textContent = movie;
+      li.addEventListener("click", () => {
+        input.value = movie;
+        suggestionBox.innerHTML = "";
+        suggestionBox.style.display = "none";
+      });
+      suggestionBox.appendChild(li);
+    });
+
+    suggestionBox.style.display = "block";
+  });
+
+  // Hamburger menu
+  document.getElementById("menu-toggle").addEventListener("click", function() {
+    document.querySelector(".nav-menu").classList.toggle("show-menu");
+  });
+
+  // Quick Book redirect
+  function goToSeatSelection() {
+    window.location.href = "seat-selection.html";
+  }
+
+  // Add next 14 days to date dropdown
+  const dateSelect = document.getElementById("dateSelect");
+  const today = new Date();
+  for (let i = 0; i < 14; i++) {
+    const date = new Date(today);
+    date.setDate(today.getDate() + i);
+    const option = document.createElement("option");
+    option.value = date.toISOString().split('T')[0];
+    option.textContent = date.toDateString();
+    dateSelect.appendChild(option);
+  }
+
+  // ===== Dolby Section Amazon Prime-style Slider (Auto-scroll Left) =====
+  const slider = document.querySelector('.dolby-slider'); // Parent container
+  let scrollAmount = 0;
+  function autoSlide() {
+    if (!slider) return;
+    scrollAmount += 2; // Speed of slide
+    if (scrollAmount >= slider.scrollWidth - slider.clientWidth) {
+      scrollAmount = 0; // Reset to beginning
+    }
+    slider.scrollTo({
+      left: scrollAmount,
+      behavior: 'smooth'
+    });
+  }
+
+  setInterval(autoSlide, 30); // Controls speed (smaller = faster)
+
+
+  // Existing booking button click
+document.querySelectorAll('.quick-book, .book-now').forEach(button => {
+  button.addEventListener('click', function () {
+    const selectedDate = document.getElementById('date').value;
+    if (!selectedDate) {
+      alert("Please select a date.");
+      return;
+    }
+    // Save date to localStorage
+    localStorage.setItem('selectedDate', selectedDate);
+
+    // Go to seat selection
+    window.location.href = "seat-selection.html";
+  });
+});
+
+ function quickBook(movieName, showTime, movieImgPath) {
+    const selectedDate = document.querySelector('#date-select')?.value;
+
+    if (!selectedDate) {
+      alert("Please select a date before booking!");
+      return;
+    }
+
+    localStorage.setItem("selectedMovie", movieName);
+    localStorage.setItem("selectedShowtime", showTime);
+    localStorage.setItem("selectedDate", selectedDate);
+    localStorage.setItem("selectedMovieImage", movieImgPath);
+
+    window.location.href = "seat-selection.html";
+  }
+
+
+</script>
+
+
+
+</body>
+</html>

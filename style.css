@@ -1,0 +1,796 @@
+/* === RESET & BASE STYLES === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* === HEADER === */
+.custom-header {
+  background-color: #000000;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo-box {
+  background-color: #0f0f0f;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.logo {
+   height: 150px;
+  object-fit: cover;
+}
+
+.nav-box {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-menu a {
+  color: #ffffff;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+  color: crimson;
+}
+
+.site-title {
+    font-size: 25px;
+    text-align: center;
+    margin: 10px 0;
+  }
+
+
+/* === HAMBURGER === */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background: crimson;
+}
+
+
+/**Search-box**/
+.search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-box {
+  display: none;
+  position: absolute;
+  top: 40px; /* search icon ke just neeche */
+  right: 0;
+  width: 220px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background: #ffffff;  /* white background for visibility */
+  color: #000; /* black text */
+  z-index: 999;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.search-box.active {
+  display: block;
+}
+
+.search-suggestions {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: #000;
+  position: absolute;
+  width: 220px;
+  right: 0;
+  top: 78px;
+  z-index: 998;
+  display: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  border: 1px solid #ccc;
+}
+
+.search-suggestions li {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.search-suggestions li:hover {
+  background-color: #f0f0f0;
+}
+
+
+
+/* === DOLBY BANNER === */
+.dolby-box {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+  background-color: #000000;
+}
+
+.dolby-box img {
+  max-height: 40rem;
+  object-fit: contain;
+  width: 90%;
+
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  background-color: #111; /* Dark background */
+  margin: 20px 0;
+}
+
+.slide-track {
+  display: flex;
+  width: calc(500px * 6); /* 6 images */
+  animation: scroll-left 25s linear infinite;
+}
+
+.slide-track img {
+  width: 500px;
+  height: 300px;
+  object-fit: cover;
+  flex-shrink: 0;
+  margin-right: 5px;
+  border-radius: 8px;
+}
+
+/* Keyframe for scrolling */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-1500px); /* 3 original images */
+  }
+}
+
+
+/* === MOVIES GRID === */
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  background-color: #000000;
+}
+
+.movie-card {
+  background: #1a1a1a;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.movie-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(255, 0, 0, 0.2);
+}
+
+.poster img {
+  width: 100%;
+  height: auto;
+}
+
+.info {
+  padding: 15px;
+}
+
+.info h2 {
+  font-size: 18px;
+  color: crimson;
+}
+
+.info p {
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+/* === BOOKING BOX === */
+.booking {
+  background: #000000;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.booking select,
+.booking button {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+}
+
+.booking button {
+  background: crimson;
+  color: white;
+  cursor: pointer;
+}
+
+/* === TAGLINE SECTION === */
+.tagline-section {
+  background-color: #ffffff;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+.tagline-section h2 {
+  color: crimson;
+  font-size: 28px;
+  font-weight: bold;
+  font-family: 'Ubuntu', sans-serif;
+  text-shadow: 1px 1px 4px #000;
+}
+
+/* === FOOTER === */
+
+.footer-container img{
+  max-height: 110px;
+    width: 50%%;
+    object-fit: contain;
+    
+}
+
+footer {
+  background: #000000;
+  padding: 30px 20px;
+  color: #ccc;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-contact,
+.footer-links,
+.footer-social {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-links a {
+  display: block;
+  margin: 6px 0;
+  color: #ffffff;
+}
+
+.footer-social a {
+  margin-right: 15px;
+  font-size: 20px;
+  color: crimson;
+}
+
+.footer-social a:hover {
+  color: white;
+}
+
+/* === BACK TO TOP === */
+.back-to-top {
+  background: crimson;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* === RESPONSIVE FINAL FIXES === */
+@media (max-width: 899px) {
+  .dolby-box {
+    max-width: 100%;
+    overflow: hidden;
+    margin: 20px auto 0;
+  }
+
+  .dolby-box img {
+    max-height: 500px;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  .booking {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .booking select,
+  .booking button {
+    width: 90%;
+    max-width: 300px;
+  }
+
+   .custom-header {
+      flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  
+  .logo {
+    height: 120px;
+    width: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .nav-box {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #1a1a1a;
+    width: 100%;
+    margin-top: 10px;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .nav-menu.show-menu {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .search-wrapper {
+      position: relative;
+  display: flex;
+  align-items: center;;
+  }
+
+  .search-box {
+  display: none;
+  position: absolute;
+  top: 40px; /* search icon ke just neeche */
+  right: 0;
+  width: 220px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background: #ffffff;  /* white background for visibility */
+  color: #000; /* black text */
+  z-index: 999;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.search-box.active {
+  display: block;
+}
+
+.search-suggestions {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: #000;
+  position: absolute;
+  width: 220px;
+  right: 0;
+  top: 78px;
+  z-index: 998;
+  display: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  border: 1px solid #ccc;
+}
+
+.search-suggestions li {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.search-suggestions li:hover {
+  background-color: #f0f0f0;
+}
+
+  .search-icon-box {
+    margin: auto;
+  }
+
+  .dolby-box img {
+    max-height: 350px;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  .footer-container img {
+  border-radius: 50%;
+  height: 70px; /* smaller */
+  width: auto;
+} 
+
+}
+
+@media (max-width: 768px) {
+  .nav-box {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .site-title {
+    font-size: 20px;
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #1a1a1a;
+    width: 100%;
+    margin-top: 10px;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .nav-menu.show-menu {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .search-wrapper {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .search-box {
+    position: relative;
+    width: 90%;
+    max-width: 250px;
+    left: unset;
+    transform: unset;
+    margin: 10px auto 0;
+    display: none;
+  }
+
+  .search-box.active {
+    display: block;
+  }
+
+  .search-icon-box {
+    margin: auto;
+  }
+
+  .dolby-box img {
+      max-height: 350px;
+    width: 100%;
+    object-fit: contain;
+  }
+
+   .custom-header {
+      flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  
+  .logo {
+    height: 120px;
+    width: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .nav-box {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #1a1a1a;
+    width: 100%;
+    margin-top: 10px;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .nav-menu.show-menu {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .search-wrapper {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .search-box {
+    position: relative;
+    width: 90%;
+    max-width: 250px;
+    left: unset;
+    transform: unset;
+    margin: 10px auto 0;
+    display: none;
+  }
+
+  .search-box.active {
+    display: block;
+  }
+
+  .search-icon-box {
+    margin: auto;
+  }
+
+  .dolby-box img {
+    max-height: 350px;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  .footer-container img {
+  border-radius: 50%;
+  height: 70px; /* smaller */
+  width: auto;
+}
+
+}
+
+@media (max-width: 600px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .footer-links a,
+  .footer-contact p {
+    margin: 6px 0;
+  }
+
+  .footer-social a {
+    margin: 10px;
+  }
+
+  .dolby-box img{
+max-height: 280px;
+    width: 100%;
+    object-fit: contain;
+  }
+  .custom-header {
+      flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  
+  .logo {
+    height: 120px;
+    width: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .nav-box {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #1a1a1a;
+    width: 100%;
+    margin-top: 10px;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .nav-menu.show-menu {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .search-wrapper {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .search-box {
+    position: relative;
+    width: 90%;
+    max-width: 250px;
+    left: unset;
+    transform: unset;
+    margin: 10px auto 0;
+    display: none;
+  }
+
+  .search-box.active {
+    display: block;
+  }
+
+  .search-icon-box {
+    margin: auto;
+  }
+
+  .dolby-box img {
+    max-height: 350px;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  .footer-container img {
+  border-radius: 50%;
+  height: 70px; /* smaller */
+  width: auto;
+}
+
+}
+
+@media (max-width: 480px) {
+  .movie-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .poster img {
+    max-height: 240px;
+  }
+
+  .dolby-box img{
+max-height: 100px;
+    width: 100%;
+    object-fit: contain;
+  }
+
+    .custom-header {
+      flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  
+  .logo {
+    height: 120px;
+    width: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .nav-box {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #1a1a1a;
+    width: 100%;
+    margin-top: 10px;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .nav-menu.show-menu {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .search-wrapper {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .search-box {
+    position: relative;
+    width: 90%;
+    max-width: 250px;
+    left: unset;
+    transform: unset;
+    margin: 10px auto 0;
+    display: none;
+  }
+
+  .search-box.active {
+    display: block;
+  }
+
+  .search-icon-box {
+    margin: auto;
+  }
+
+  .dolby-box img {
+    max-height: 350px;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  .footer-container img {
+  border-radius: 50%;
+  height: 70px; /* smaller */
+  width: auto;
+}
+}
